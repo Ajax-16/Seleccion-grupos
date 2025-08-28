@@ -122,7 +122,7 @@ function showFinalStats() {
     const sortedGroups = [...groups].sort((a, b) => b.points - a.points);
 
     const container = document.createElement("div");
-    container.className = "fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4";
+    container.className = "fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto";
 
     const modal = document.createElement("div");
     modal.className = "bg-white rounded-3xl p-6 max-w-md w-full shadow-2xl flex flex-col gap-6";
