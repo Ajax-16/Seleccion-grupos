@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-[#1e3c72] to-[#2a5298] text-white w-full min-h-screen flex flex-col items-center">
+    <h1 class="text-3xl md:text-4xl font-extrabold mt-28 mb-14 tracking-wide text-center fade-in">
+        <i class="fa fa-trophy text-yellow-400 mr-2"></i> Selección de Grupos
+    </h1>
+
+    <div
+        class="w-[95%] max-w-md fade-in bg-white/10 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl p-6 flex flex-col items-center gap-6">
+
+        <h3 class="text-xl font-semibold text-center">Añade la cantidad de grupos</h3>
+        <input id="group-amount" type="number" class="p-3 w-full border-2 text-white border-white rounded-lg text-lg"
+            placeholder="Número de grupos">
+
+        <h3 class="text-xl font-semibold text-center">Máximo total de exo$</h3>
+        <input id="max-money" type="number" class="p-3 w-full border-2 text-white border-white rounded-lg text-lg"
+            placeholder="Máximo total (ej. 2000)">
+
+        <button
+            class="bg-[#00acee] cursor-pointer hover:bg-[#00d4ff] text-white font-bold px-6 py-3 rounded-lg text-lg flex items-center gap-2 shadow transition transform hover:scale-105"
+            onclick="changeSection()">
+            <i class="fa fa-arrow-right"></i> Crear
+        </button>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

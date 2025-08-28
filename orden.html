@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-[#1e3c72] to-[#2a5298] text-white w-full min-h-screen flex flex-col items-center">
+    <h1 class="text-3xl md:text-4xl font-extrabold mt-28 mb-14 tracking-wide text-center">
+        <i class="fa fa-trophy text-yellow-400 mr-2"></i> Selección de Grupos
+    </h1>
+
+    <!-- Lista de grupos -->
+    <div id="group-list" class="w-[95%] max-w-2xl flex flex-col gap-10"></div>
+
+    <!-- Botón reiniciar -->
+    <div class="w-[95%] max-w-2xl flex justify-center my-6 fade-in">
+        <button id="reset-btn"
+            class="cursor-pointer bg-[#00acee] hover:bg-[#00d4ff] transition-colors text-white font-bold px-6 py-3 rounded-lg text-lg flex items-center gap-2 shadow">
+            <i class="fa fa-rotate-left"></i></i> Reiniciar
+        </button>
+    </div>
+
+    <!-- Indicador de dinero total -->
+    <div id="total-money"
+        class="fixed top-6 right-6 bg-white/10 backdrop-blur-md text-yellow-300 font-bold px-5 py-3 rounded-2xl shadow-lg text-lg flex items-center gap-2 z-50">
+        <i class="fa fa-star"></i>
+        <span id="money-value">0 / 0 exo$</span>
+    </div>
+
+    <!-- Modal -->
+    <div id="response-modal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+        <div
+            class="bg-white/95 text-black rounded-3xl p-6 w-full max-w-md shadow-2xl flex flex-col items-center gap-6 backdrop-blur-sm">
+
+            <h2 id="modal-title" class="text-2xl font-bold mb-4 text-center">Asignar respuesta</h2>
+
+            <div class="flex flex-col sm:flex-row gap-3 w-full justify-center">
+                <button
+                    class="bg-yellow-400 cursor-pointer hover:bg-yellow-500 text-[#222] font-bold px-4 py-2 rounded-xl shadow-lg flex items-center gap-2 transition transform hover:scale-105"
+                    onclick="addPointsModal(100)">
+                    <i class="fa fa-star"></i> Fácil
+                </button>
+                <button
+                    class="bg-orange-400 cursor-pointer hover:bg-orange-500 text-[#222] font-bold px-4 py-2 rounded-xl shadow-lg flex items-center gap-2 transition transform hover:scale-105"
+                    onclick="addPointsModal(200)">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i> Media
+                </button>
+                <button
+                    class="bg-red-500/90 cursor-pointer hover:bg-red-400 text-[#222] font-bold px-4 py-2 rounded-xl shadow-lg flex items-center gap-2 transition transform hover:scale-105"
+                    onclick="addPointsModal(300)">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> Difícil
+                </button>
+            </div>
+
+            <button class="mt-6 text-sm text-gray-500 hover:underline cursor-pointer transition"
+                onclick="closeModal()">Cancelar</button>
+        </div>
+    </div>
+
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
