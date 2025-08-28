@@ -125,7 +125,7 @@ function showFinalStats() {
     container.className = "fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto";
 
     const modal = document.createElement("div");
-    modal.className = "bg-white rounded-3xl p-6 max-w-md w-full shadow-2xl flex flex-col gap-6 max-h-[90vh] overflow-y-auto"; // <-- aquí
+    modal.className = "bg-white rounded-3xl p-6 max-w-md w-full shadow-2xl flex flex-col gap-6 h-[80vh] overflow-y-auto"; // <-- aquí
 
     const title = document.createElement("h2");
     title.className = "text-2xl font-bold text-center text-black";
